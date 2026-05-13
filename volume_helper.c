@@ -37,6 +37,10 @@ static IMMDevice* get_default_device(void){
     if (FAILED(hr)) return NULL;
     return device;
 }
+
+static void get_process_name(DWORD pid, char *buf, int buflen){
+    HANDLE hProc = OpenProcess(PROCESS_QUERY_LIMITEDINFORMATION, FALSE, pid);
+}
 int main(){
     return 0;
 }
