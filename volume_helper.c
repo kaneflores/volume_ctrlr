@@ -25,6 +25,13 @@ DEFINE_GUID(IID_IAudioSessionManager2,0x77AA99A0,0x1BD6,0x484F,0x8B,0xC7,0x2C,0x
 DEFINE_GUID(IID_ISimpleAudioVolume,   0x87CE5498,0x68D6,0x44E5,0x92,0x15,0x6D,0xA4,0x7E,0xF8,0x83,0xD8);
 DEFINE_GUID(IID_IAudioEndpointVolume, 0x5CDF2C82,0x841E,0x4546,0x97,0x22,0xCF,0x7F,0xA0,0x79,0x00,0x92);
 
+static IMMDevice* get_default_device(void){
+    IMMDeviceEnumerator *enumerator = NULL;
+    IMMDevice *device = NULL;
+    HRESULT hr = CoCreateInstance(&CLSID_MMDeviceEnumerator, NULL, CLSCTX_ALL,
+                            &IID_IMMDeviceEnumerator, (void**)&enumerator);
+                            
+}
 int main(){
     return 0;
 }
