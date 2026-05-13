@@ -40,6 +40,20 @@ static IMMDevice* get_default_device(void){
 
 static void get_process_name(DWORD pid, char *buf, int buflen){
     HANDLE hProc = OpenProcess(PROCESS_QUERY_LIMITEDINFORMATION, FALSE, pid);
+    if (!hProc){ strncpy(buf, "Unknown", buflen); return;}
+    char path[MAX_PATH] = {0};
+    DWORD sz = MAX_PATH;
+    if (QueryFullProcessImageNameA(hProc, 0, path, &sz)){
+        char *slash = strrchr(path, '\\');
+        if (slash){strncpy(buf, slash + 1, buflen);}
+        else{
+            strncpy(buf, path, buflen);
+        }
+    }else{
+        strncpy(buf, "Unknown", buflen);
+
+    }
+    
 }
 int main(){
     return 0;
