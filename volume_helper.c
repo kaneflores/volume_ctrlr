@@ -30,7 +30,12 @@ static IMMDevice* get_default_device(void){
     IMMDevice *device = NULL;
     HRESULT hr = CoCreateInstance(&CLSID_MMDeviceEnumerator, NULL, CLSCTX_ALL,
                             &IID_IMMDeviceEnumerator, (void**)&enumerator);
-                            
+    
+    if (FAILED(hr)) return NULL;
+    hr = IMMDeviceEnumerator_GetDefaultAudioEndpoint(enumerator, eRender, eConsole, &device);
+    IMMDeviceEnumerator_Release(enumerator);
+    if (FAILED(hr)) return NULL;
+    return device;
 }
 int main(){
     return 0;
