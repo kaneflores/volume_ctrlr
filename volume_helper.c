@@ -53,6 +53,7 @@ static void get_process_name(DWORD pid, char *buf, int buflen){
         strncpy(buf, "Unknown", buflen);
 
     }
+    CloseHandle(hProc);
     
 }
 int main(){
