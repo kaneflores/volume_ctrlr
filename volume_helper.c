@@ -151,6 +151,10 @@ static ISimpleAudioVolume* find_session_by_pid(DWORD target_pid){ //checked
 
 }
 
+static int cmd_set(DWORD pid, int vol){
+    I
+}
+
 
 
 
