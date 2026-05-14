@@ -109,6 +109,27 @@ static int cmd_list(void){ //checked
     IAudioSessionEnumerator_Release(senum);
     return 0;
 }
+
+static ISimpleAudioVolume* find_session_by_pid(DWORD target_pid){
+    IMMDevice *device = get_default_device();
+    if (!device) return NULL;
+
+    IAudioSessionManager2 *mgr = NULL;
+    IMMDevice_Activate(device, &IID_IAudioSessionManager2, CLSCTX_ALL, NULL, (void**)&mgr);
+    IMMDevice_Release(device);
+    if (!mgr) return NULL;
+
+    IAudioSessionEnumerator *senum = NULL;
+    IAudioSessionManager2_GetSessionEnumerator(mgr, &senum);
+    
+}
+
+
+
+
+
+
+
 int main(){
     return 0;
 }
