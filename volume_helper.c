@@ -121,7 +121,15 @@ static ISimpleAudioVolume* find_session_by_pid(DWORD target_pid){
 
     IAudioSessionEnumerator *senum = NULL;
     IAudioSessionManager2_GetSessionEnumerator(mgr, &senum);
+    IAudioSessionManager2_Release(mgr);
+    if (!senum) return NULL;
+
+    int count = 0;
+    IAudioSessionEnumerator_GetCount(senum, &count);
+    ISimpleAudioVolume *found = NULL;
+
     
+
 }
 
 
