@@ -152,7 +152,16 @@ static ISimpleAudioVolume* find_session_by_pid(DWORD target_pid){ //checked
 }
 
 static int cmd_set(DWORD pid, int vol){
-    I
+    ISimpleAudioVolume *sav = find_session_by_pid(pid);
+    if (!sav) { fprintf(stderr, "ERROR:session_not_found\n"); return 1;}
+    float fvol = (float)vol / 100.0f;
+    if (fvol < 0.0f) fvol = 0.0f;
+    if (fvol > 1.0f) fvol = 1.0f;
+    HRESULT hr = ISimpleAudioVolume_SetMasterVolume(sav, fvol, NULL);
+    ISimpleAudioVolume_Release(sav);
+    printf(SUCCEEDED(hr) ? "OK\n" : "ERROR:set_failed\n");
+    return SUCCEEDED(hr) ? 0 : 1;
+    
 }
 
 
