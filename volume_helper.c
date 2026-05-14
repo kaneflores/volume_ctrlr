@@ -106,7 +106,8 @@ static int cmd_list(void){
         printf("%lu|%s|%d|%d\n", (unsigned long)pid, name, (int)(fvol*100+0.5f), muted?1:0);
     }
 
-    IA
+    IAudioSessionEnumerator_Release(senum);
+    return 0;
 }
 int main(){
     return 0;
