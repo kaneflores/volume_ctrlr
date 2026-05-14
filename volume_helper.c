@@ -58,7 +58,46 @@ static void get_process_name(DWORD pid, char *buf, int buflen){
 }
 
 static int cmd_list(void){
+    IMMDevice *device = get_default_device();
+    if (!device) { fprintf(stderr, "ERROR:no_device\n"); return 1; }
+
+    IAudioSessionManager2 *mgr = NULL;
+    IMMDevice_Activate(device, &IID_IAudioSessionManager2, CLSCTX_ALL, NULL, (void**)&mgr);
+    IMMDevice_Release(device);
+    if (!mgr){ fprintf(stderr, "ERROR:no_manager\n"); return 1;
+    }
+
+    IAudioSessionEnumerator *senum = NULL;
+    IAudioSessionManager2_GetSessionEnumerator(mgr, &senum);
+    IAudioSessionManager2_Release(mgr);
+    if (!senum) { fprintf(stderr, "ERROR:no_enumerator\n"); return 1;}
+
+    int count = 0;
+    IAudioSessionEnumerator_GetCount(senum, &count);
     
+    for (int i = 0; i < count; i++){
+        IAudioSessionControl *ctrl = NULL;
+        IAudioSessionEnumerator_GetSession(senum, i, &ctrl);
+        if (!ctrl) continue;
+
+        IAudioSessionControl2 *ctrl2 = NULL;
+        IAudioSessionControl_QueryInterface(ctrl, &(GUID){0xBFB7FF88, 0x7239, 0x4FC9, {0x8F, 0xA2, 0x07, 0xC9, 0x50, 0xBE, 0x9C, 0x6D}},
+                                            (void**)&ctrl2);
+        IAudioSessionControl_Release(ctrl);
+        if (!ctrl2) continue;
+
+        DWORD pid = 0;
+        IAudioSessionControl2_GetProcessId(ctrl2, &pid);
+        if (pid ==0){ IAudioSessionControl2_Release(ctrl2); continue;}
+
+        ISimpleAudioVolume *vol = NULL;
+        IAudioSessionControl2_QueryInterface(ctrl2, &IID_ISimpleAudioVolume, (void**)&vol);
+        IAudioSessionControl2_Release(ctrl2);
+        if (!vol) continue;
+
+        float fvol = 0.0f;
+        
+    }
 }
 int main(){
     return 0;
