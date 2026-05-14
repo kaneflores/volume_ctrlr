@@ -96,8 +96,17 @@ static int cmd_list(void){
         if (!vol) continue;
 
         float fvol = 0.0f;
-        
+        BOOL muted = FALSE;
+        ISimpleAudioVolume_GetMasterVolume(vol, &fvol);
+        ISimpleAudioVolume_GetMute(vol, &muted);
+        ISimpleAudioVolume_Release(vol);
+
+        char name[MAX_PATH] = {0};
+        get_process_name(pid, name, MAX_PATH);
+        printf("%lu|%s|%d|%d\n", (unsigned long)pid, name, (int)(fvol*100+0.5f), muted?1:0);
     }
+
+    IA
 }
 int main(){
     return 0;
