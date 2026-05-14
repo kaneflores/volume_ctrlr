@@ -56,6 +56,10 @@ static void get_process_name(DWORD pid, char *buf, int buflen){
     CloseHandle(hProc);
     
 }
+
+static int cmd_list(void){
+    
+}
 int main(){
     return 0;
 }
