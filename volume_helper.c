@@ -110,7 +110,7 @@ static int cmd_list(void){ //checked
     return 0;
 }
 
-static ISimpleAudioVolume* find_session_by_pid(DWORD target_pid){
+static ISimpleAudioVolume* find_session_by_pid(DWORD target_pid){ //checked
     IMMDevice *device = get_default_device();
     if (!device) return NULL;
 
