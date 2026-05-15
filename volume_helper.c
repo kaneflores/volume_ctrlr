@@ -173,6 +173,10 @@ static int cmd_mute(DWORD pid, int mute){//validated and done
     return SUCCEEDED(hr) ? 0 : 1;//
 }
 
+static int cmd_master_get(void){
+    IMMDevice *device = get_default_device();
+}
+
 
 
 
