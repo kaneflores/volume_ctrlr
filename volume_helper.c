@@ -177,7 +177,7 @@ static int cmd_master_get(void){
     IMMDevice *device = get_default_device();
     if (!device) { fprintf(stderr, "ERROR:no_device\n"); return 1;}
     IAudioEndpointVolume *epvol = NULL;
-    IMMDevice_Activate(device, &IID_AudioEndpointVolume, CLSCTX_ALL, NULL, (void**)&epvol);
+    IMMDevice_Activate(device, &IID_IAudioEndpointVolume, CLSCTX_ALL, NULL, (void**)&epvol);
     IMMDevice_Release(device);
 }
 
