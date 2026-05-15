@@ -164,13 +164,13 @@ static int cmd_set(DWORD pid, int vol){ // validated and odne
     
 }
 
-static int cmd_mute(DWORD pid, int mute){
+static int cmd_mute(DWORD pid, int mute){//validated and done
     ISimpleAudioVolume *sav = find_session_by_pid(pid);
     if (!sav) {fprintf(stderr, "ERROR:session_not_found\n"); return 1;}
     HRESULT hr = ISimpleAudioVolume_SetMute(sav, mute ? TRUE : FALSE, NULL);
     ISimpleAudioVolume_Release(sav);
     printf(SUCCEEDED(hr) ? "OK\n" : "ERROR:mute_failed\n");
-    return SUCCEEDED(hr) ? 0 : 1;
+    return SUCCEEDED(hr) ? 0 : 1;//
 }
 
 
