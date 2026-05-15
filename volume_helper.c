@@ -179,6 +179,12 @@ static int cmd_master_get(void){
     IAudioEndpointVolume *epvol = NULL;
     IMMDevice_Activate(device, &IID_IAudioEndpointVolume, CLSCTX_ALL, NULL, (void**)&epvol);
     IMMDevice_Release(device);
+    if (!epvol) { fprintf(stderr, "ERROR:no_endpoint_vol\n"); return 1;}
+    float fvol = 0.0f;
+    IAudioEndpointVolume_GetMasterVolumeLevelScalar(epvol, &fvol);
+    IAudioEndpointVolume_Release(epvol);
+    printf("%d\n", (int)(fvol * 100.0f + 0.5f));
+    return 0;
 }
 
 
