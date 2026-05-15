@@ -173,7 +173,7 @@ static int cmd_mute(DWORD pid, int mute){//validated and done
     return SUCCEEDED(hr) ? 0 : 1;//
 }
 
-static int cmd_master_get(void){
+static int cmd_master_get(void){ //valitdated and done
     IMMDevice *device = get_default_device();
     if (!device) { fprintf(stderr, "ERROR:no_device\n"); return 1;}
     IAudioEndpointVolume *epvol = NULL;
