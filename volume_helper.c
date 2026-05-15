@@ -166,7 +166,8 @@ static int cmd_set(DWORD pid, int vol){ // validated and odne
 
 static int cmd_mute(DWORD pid, int mute){
     ISimpleAudioVolume *sav = find_session_by_pid(pid);
-    // test
+    if (!sav) {fprintf(stderr, "ERROR:session_not_found\n"); return 1;}
+    HRESULT hr = ISimpleAudioVolume_SetMute(sav, mute ? TRUE : FALSE, NULL);
 }
 
 
