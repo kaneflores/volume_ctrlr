@@ -173,28 +173,14 @@ static int cmd_mute(DWORD pid, int mute){//validated and done
     return SUCCEEDED(hr) ? 0 : 1;//
 }
 // master funcs
-// static int cmd_master_set(int vol) {
-//     IMMDevice *device = get_default_device();
-//     if (!device) { fprintf(stderr, "ERROR:no_device\n"); return 1; }
-//     IAudioEndpointVolume *epvol = NULL;
-//     IMMDevice_Activate(device, &IID_IAudioEndpointVolume, CLSCTX_ALL, NULL, (void**)&epvol);
-//     IMMDevice_Release(device);
-//     if (!epvol) { fprintf(stderr, "ERROR:no_endpoint_vol\n"); return 1; }
-//     float fvol = (float)vol / 100.0f;
-//     if (fvol < 0.0f) fvol = 0.0f;
-//     if (fvol > 1.0f) fvol = 1.0f;
-//     HRESULT hr = IAudioEndpointVolume_SetMasterVolumeLevelScalar(epvol, fvol, NULL);
-//     IAudioEndpointVolume_Release(epvol);
-//     printf(SUCCEEDED(hr) ? "OK\n" : "ERROR:master_set_failed\n");
-//     return SUCCEEDED(hr) ? 0 : 1;
-// }
+
 static int cmd_master_set(int vol){
     IMMDevice *device = get_default_device();
     if (!device) { fprintf(stderr, "ERROR:no_device\n"); return 1;}
     IAudioEndpointVolume *epvol = NULL;
     IMMDevice_Activate(device, &IID_IAudioEndpointVolume, CLSCTX_ALL, NULL, (void**)&epvol);
     IMMDevice_Release(device);
-    
+
 
 }
 
