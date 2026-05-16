@@ -172,7 +172,7 @@ static int cmd_mute(DWORD pid, int mute){//validated and done
     printf(SUCCEEDED(hr) ? "OK\n" : "ERROR:mute_failed\n");
     return SUCCEEDED(hr) ? 0 : 1;//
 }
-
+// master 
 static int cmd_master_get(void){ //valitdated and done
     IMMDevice *device = get_default_device();
     if (!device) { fprintf(stderr, "ERROR:no_device\n"); return 1;}
