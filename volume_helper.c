@@ -207,11 +207,17 @@ static int cmd_master_get(void){ //valitdated and done
 }
 
 
-int main(int argc, char *argv[]){
+int main(int argc, char *argv[]){/
     CoInitializeEx(NULL, COINIT_MULTITHREADED);
     int ret = 1;
     if (argc < 2) {
-        fprintf(stderr, "")
+        fprintf(stderr, "Usage: volume_helper list|set <pid> <vol>|mute <pid> <0|1>|master <vol>|masterget\n");
     }
+    else if (strcmp(argv[1], "list") == 0){
+        ret = cmd_list();
+    }
+    else if (strcmp(argv[1], "set") == 0 && argc ==4) {ret = cmd_set((DWORD)atol(argv[2]), atoi(argv[3]));}
+    else if (strcmp(a))
+
     return 0;
 }
