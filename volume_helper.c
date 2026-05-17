@@ -217,7 +217,15 @@ int main(int argc, char *argv[]){/
         ret = cmd_list();
     }
     else if (strcmp(argv[1], "set") == 0 && argc ==4) {ret = cmd_set((DWORD)atol(argv[2]), atoi(argv[3]));}
-    else if (strcmp(a))
+    else if (strcmp(argv[1], "mute") == 0 && argc == 4){
+        ret = cmd_mute((DWORD)atol(argv[2]), atoi(argv[3]));
+    }
+    else if (strcmp(argv[1], "master") == 0 && argc == 3) {
+        ret = cmd_master_set(atoi(argv[2]));
+    }
+    else if (strcmp(argv[1], "masterget") == 0){
+        ret = cmd_master_get();
+    }
 
     return 0;
 }
