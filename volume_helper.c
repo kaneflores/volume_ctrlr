@@ -207,7 +207,7 @@ static int cmd_master_get(void){ //valitdated and done
 }
 
 
-int main(int argc, char *argv[]){/
+int main(int argc, char *argv[]){//
     CoInitializeEx(NULL, COINIT_MULTITHREADED);
     int ret = 1;
     if (argc < 2) {
@@ -227,7 +227,7 @@ int main(int argc, char *argv[]){/
         ret = cmd_master_get();
     }
     else{
-        fprintf(stderr, "Unknown command. \n");
+        fprintf(stderr, "Unknown command.\n");
     }
     CoUninitialize();
     return ret;
