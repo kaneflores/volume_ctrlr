@@ -174,7 +174,7 @@ static int cmd_mute(DWORD pid, int mute){//validated and done
 }
 // master funcs
 
-static int cmd_master_set(int vol){
+static int cmd_master_set(int vol){ /// validated and chedked and done
     IMMDevice *device = get_default_device();
     if (!device) { fprintf(stderr, "ERROR:no_device\n"); return 1;}
     IAudioEndpointVolume *epvol = NULL;
