@@ -226,6 +226,9 @@ int main(int argc, char *argv[]){/
     else if (strcmp(argv[1], "masterget") == 0){
         ret = cmd_master_get();
     }
-
-    return 0;
+    else{
+        fprintf(stderr, "Unknown command. \n");
+    }
+    CoUninitialize();
+    return ret;
 }
