@@ -180,6 +180,7 @@ static int cmd_master_set(int vol){
     IAudioEndpointVolume *epvol = NULL;
     IMMDevice_Activate(device, &IID_IAudioEndpointVolume, CLSCTX_ALL, NULL, (void**)&epvol);
     IMMDevice_Release(device);
+    
 
 
 }
