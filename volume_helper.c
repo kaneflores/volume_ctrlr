@@ -200,11 +200,11 @@ static int cmd_master_get(void){ //valitdated and done
 }
 
 
-
-
-
-
-
 int main(){
+    CoInitializeEx(NULL, COINIT_MULTITHREADED);
+    int ret = 1;
+    if (argc < 2) {
+        fprintf(stderr, "")
+    }
     return 0;
 }
