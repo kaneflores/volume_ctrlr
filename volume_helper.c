@@ -183,8 +183,11 @@ static int cmd_master_set(int vol){
     if (!epvol) { fprintf(stderr, "ERROR:no_endpoint_vol\n"); return 1;}
     float fvol = (float)vol / 100.0f;
     if (fvol < 0.0f) fvol = 0.0f;
-
-
+    if (fvol > 1.0f) fvol = 1.0f;
+    HRESULT hr = IAudioEndpointVolume_SetMasterVolumeLevelScalar(epvol, fvol, NULL);
+    IAudioEndpointVolume_Release(epvol);
+    printf(SUCCEEDED(hr) ? "OK\n" : "ERROR:master_set_failed\n");
+    return SUCCEEDED(hr) > 0 : 1;
 
 }
 
