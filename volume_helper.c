@@ -187,7 +187,7 @@ static int cmd_master_set(int vol){
     HRESULT hr = IAudioEndpointVolume_SetMasterVolumeLevelScalar(epvol, fvol, NULL);
     IAudioEndpointVolume_Release(epvol);
     printf(SUCCEEDED(hr) ? "OK\n" : "ERROR:master_set_failed\n");
-    return SUCCEEDED(hr) > 0 : 1;
+    return SUCCEEDED(hr) ? 0 : 1;
 
 }
 
