@@ -180,7 +180,10 @@ static int cmd_master_set(int vol){
     IAudioEndpointVolume *epvol = NULL;
     IMMDevice_Activate(device, &IID_IAudioEndpointVolume, CLSCTX_ALL, NULL, (void**)&epvol);
     IMMDevice_Release(device);
-    
+    if (!epvol) { fprintf(stderr, "ERROR:no_endpoint_vol\n"); return 1;}
+    float fvol = (float)vol / 100.0f;
+    if (fvol < 0.0f) fvol = 0.0f;
+
 
 
 }
