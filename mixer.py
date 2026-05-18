@@ -32,3 +32,5 @@ ICONS = {
     "vlc.exe":      "🎬",
     "zoom.exe":     "📞",
 }
+
+def run_helper(*args) -> str:
