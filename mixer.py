@@ -11,3 +11,6 @@ import os
 import threading
 import tkinter as tk
 from tkinter import ttk, messagebox
+
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+HELPER = os.path.join(SCRIPT_DIR, "volume_helper.exe")
