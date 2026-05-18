@@ -18,3 +18,17 @@ HELPER = os.path.join(SCRIPT_DIR, "volume_helper.exe")
 REFRESH_INTERVAL_MS = 3000
 SLIDER_WIDTH = 22
 CHANNEL_WIDTH = 110
+
+ICONS = {
+    "chrome.exe":   "🌐",
+    "firefox.exe":  "🦊",
+    "msedge.exe":   "🔷",
+    "discord.exe":  "💬",
+    "spotify.exe":  "🎵",
+    "teams.exe":    "👥",
+    "slack.exe":    "💼",
+    "obs64.exe":    "📹",
+    "obs32.exe":    "📹",
+    "vlc.exe":      "🎬",
+    "zoom.exe":     "📞",
+}
