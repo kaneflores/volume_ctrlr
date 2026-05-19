@@ -83,3 +83,6 @@ class VolumeMixer(tk.Tk):
         self._after_id = None
         self._build_ui()
         self.after(100, self._full_refresh)
+    
+    def _build_ui(self):
+        # top bar
