@@ -45,3 +45,6 @@ def run_helper(*args) -> str: #//validated and checked
         capture_output = True, text = True, timeout = 5
     )
     return result.stdout.strip()
+
+def fetch_sessions() -> list[dict]:
+    raw =  run_helper("list")
