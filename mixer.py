@@ -74,7 +74,7 @@ def fetch_master() -> int: # validated and done
         return 100
 
 class VolumeMixer(tk.Tk):
-    def __init__(self):
+    def __init__(self): # validated and doen
         super().__init__()
         self.title("Volume Mixer")
         self.resizable(True, False)
