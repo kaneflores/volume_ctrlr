@@ -86,3 +86,6 @@ class VolumeMixer(tk.Tk):
     
     def _build_ui(self):
         # top bar
+        topbar = tk.Frame(self, bg="#1E1E2E", pady = 8, padx =12)
+        topbar.pack(fill="x")
+        tk.Label(topbar, text"🔊  Volume Mixer", font=("Segoe UI", 14, "bold"), fg="#CDD6F4", bg = "#1E1E2E").pack(side="left")
