@@ -89,3 +89,11 @@ class VolumeMixer(tk.Tk):
         topbar = tk.Frame(self, bg="#1E1E2E", pady = 8, padx =12)
         topbar.pack(fill="x")
         tk.Label(topbar, text"🔊  Volume Mixer", font=("Segoe UI", 14, "bold"), fg="#CDD6F4", bg = "#1E1E2E").pack(side="left")
+        tk.Button(topbar, text="⟳  Refresh", command = self._full_refresh,
+                    font=("Segoe UI", 10), bg = "#313244", fg="#CDD6F4",
+                    activebackground ="#45475A", activeforeground="#CDD6F4",
+                    relief="flat", padx =10, pady = 4, cursor="hand2").pack(side="right")
+        
+        tk.Frame(self, height=1, bg="#313244").pack(fill="x")
+
+        #scrollable channel area
