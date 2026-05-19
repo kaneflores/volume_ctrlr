@@ -51,3 +51,15 @@ def fetch_sessions() -> list[dict]:
     sessions = []
     for line in raw.splitlines():
         parts = line.strip().split("|")
+        if len(parts) != 4:
+            continue
+        pid, name, vol, muted = parts
+        sessions.append({
+            "pid": int(pid),
+            "name": name,
+            "vol": int(vol),
+            "muted": muted == "1",
+        })
+    seen: dict[str, dict] = {}
+    for s in sessions:
+        key = s["name"]
