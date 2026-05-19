@@ -62,4 +62,7 @@ def fetch_sessions() -> list[dict]:
         })
     seen: dict[str, dict] = {}
     for s in sessions:
-        key = s["name"]
+        key = s["name"].lower()
+        if key not in seen or s["vol"] > seen[key]["vol"]:
+            seen[key] = s
+    return sorted(seen.values(), key=lambda x: x["name"].lower())
