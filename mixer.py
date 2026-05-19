@@ -48,3 +48,6 @@ def run_helper(*args) -> str: #//validated and checked
 
 def fetch_sessions() -> list[dict]:
     raw =  run_helper("list")
+    sessions = []
+    for line in raw.splitlines():
+        parts = line.strip().split("|")
