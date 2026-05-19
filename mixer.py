@@ -68,3 +68,7 @@ def fetch_sessions() -> list[dict]: #validated and done
     return sorted(seen.values(), key=lambda x: x["name"].lower())
 
 def fetch_master() -> int:
+    try:
+        return int(run_helper("masterget"))
+    except Exception:
+        return 100
