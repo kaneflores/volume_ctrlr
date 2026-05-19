@@ -34,3 +34,14 @@ ICONS = {
 }
 
 def run_helper(*args) -> str:
+    if not os.path.isfile(HELPER):
+        raise FileNotFoundError(
+            f"volume_helper.exe not found at:\n{HELPER}\n\n"
+            "Please compile it first with:\n"
+            "gcc volume_helper.c -o volume_helper.exe -lole32 -loleaut32 -luuid -lpsapi"
+        )
+    result = subprocess.run(
+        [HELPER, *[str(a) for a in args]],
+        capture_output = True, text = True, timeout = 5
+    )
+    return result.stdout.strip()
