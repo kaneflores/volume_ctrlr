@@ -33,7 +33,7 @@ ICONS = {
     "zoom.exe":     "📞",
 }
 
-def run_helper(*args) -> str:
+def run_helper(*args) -> str: #//validated and checked
     if not os.path.isfile(HELPER):
         raise FileNotFoundError(
             f"volume_helper.exe not found at:\n{HELPER}\n\n"
