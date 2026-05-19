@@ -46,7 +46,7 @@ def run_helper(*args) -> str: #//validated and checked
     )
     return result.stdout.strip()
 
-def fetch_sessions() -> list[dict]:
+def fetch_sessions() -> list[dict]: #validated and done
     raw =  run_helper("list")
     sessions = []
     for line in raw.splitlines():
