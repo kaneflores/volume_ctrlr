@@ -66,3 +66,5 @@ def fetch_sessions() -> list[dict]: #validated and done
         if key not in seen or s["vol"] > seen[key]["vol"]:
             seen[key] = s
     return sorted(seen.values(), key=lambda x: x["name"].lower())
+
+def fetch_master() -> int:
