@@ -72,3 +72,5 @@ def fetch_master() -> int: # validated and done
         return int(run_helper("masterget"))
     except Exception:
         return 100
+
+class VolumeMixer(tk.Tk):
