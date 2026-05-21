@@ -182,3 +182,4 @@ class VolumeMixer(tk.Tk):
             self.after(0, lambda: messagebox.showerror("Helper not found", str(e)))
         except Exception as e:
             self.after(0, lambda: self._status_var.set(f"Error: {e}"))
+        #done and validated
