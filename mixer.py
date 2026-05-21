@@ -165,3 +165,9 @@ class VolumeMixer(tk.Tk):
         v = int(float(value))#checkpont
         lbl.config(text=f"{v}%")
         callback(key, v)
+    
+    def _full_refresh(self):
+        if self._after_id:
+            self.after_cancel(self._after_id)
+        self._status_var.set("Refreshing...")
+        
