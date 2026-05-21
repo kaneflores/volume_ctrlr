@@ -183,3 +183,6 @@ class VolumeMixer(tk.Tk):
         except Exception as e:
             self.after(0, lambda: self._status_var.set(f"Error: {e}"))
         #done and validated
+
+    def _apply_refresh(self, sessions, master):
+        for w in self._widgets.values()
