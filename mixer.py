@@ -177,3 +177,8 @@ class VolumeMixer(tk.Tk):
         try:
             sessions = fetch_sessions()
             master = fetch_master()
+            self.after(0, lambda: self._apply_refresh(sessions, master))
+        except FileNotFoundError as e:
+            self.after(0, lambda: messagebox.showerror("Helper not found", str(e)))
+        except Exception as e:
+            self.after(0, lambda: self._status_var.set(f"Error: {e}"))
