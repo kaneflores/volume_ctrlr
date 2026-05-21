@@ -161,7 +161,7 @@ class VolumeMixer(tk.Tk):
         return {"frame": frame, "slider": slider, "vol_var": vol_var,
                 "pct_lbl": pct_lbl, "mute_btn": mute_btn}
     
-    def _slider_moved(self, value, key, lbl, callback):
+    def _slider_moved(self, value, key, lbl, callback): # done
         v = int(float(value))#checkpont
         lbl.config(text=f"{v}%")
         callback(key, v)
