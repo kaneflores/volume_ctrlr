@@ -125,7 +125,7 @@ class VolumeMixer(tk.Tk):
         frame = tk.Frame(parent, bg="#181825", bd=0,
                         highlightbackground="#313244", highlightthickness=1,
                         padx=8, pady=10, width=CHANNEL_WIDTH)
-        frame.grid(row=0, column=col, sticky="ns", padyx=4, pady=8)
+        frame.grid(row=0, column=col, sticky="ns", padx=4, pady=8)
         frame.grid_propagate(False)
 
         tk.Label(frame, text=icon, font=("Segoe UI", 22),
@@ -134,7 +134,7 @@ class VolumeMixer(tk.Tk):
                 fg="#BAC2DE", bg="#181825",
                 wraplength=CHANNEL_WIDTH - 16, justify = "center").pack(pady=(2,6))
         
-        vol_var = tk.Intvar(value=vol)
+        vol_var = tk.IntVar(value=vol)
         pct_lbl = tk.Label(frame, text=f"{vol}%", font=("Segoe UI", 11, "bold"),
                             fg = "#CDD6F4", bg="#181825")
         pct_lbl.pack()
@@ -149,7 +149,7 @@ class VolumeMixer(tk.Tk):
         slider.pack(pady=6)
 
         mute_btn = tk.Button(frame,
-                            text="🔇 Muted" if muted else "🔇 Live",
+                            text="🔇 Muted" if muted else "🔊  Live",
                             font=("Segoe UI", 8),
                             bg= "#45475A" if muted else "#313244",
                             fg="#CDD6F4", activebackground="#585B70",
