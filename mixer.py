@@ -135,3 +135,25 @@ class VolumeMixer(tk.Tk):
                 wraplength=CHANNEL_WIDTH - 16, justify = "center").pack(pady=(2,6))
         
         vol_var = tk.Intvar(value=vol)
+        pct_lbl = tk.Label(frame, text=f"{vol}%", font=("Segoe UI", 11, "bold"),
+                            fg = "#CDD6F4", bg="#181825")
+        pct_lbl.pack()
+
+        slider = tk.Scale(frame, from_=100, to=0, orient="vertical",
+                            variable= vol_var, length=120, width=SLIDER_WIDTH,
+                            showvalue=False, sliderlength=16,
+                            bg="#181825", fg = "#CDD6F4", troughcolor="#313244",
+                            activebackground="#89B4FA", highlightthickness=0,
+                            command=lambda v, k=key, lbl=pct_lbl, cb=on_vol:
+                                self._slider_moved(v, k, lbl, cb))
+        slider.pack(pady=6)
+
+        mute_btn = tk.Button(frame,
+                            text="🔇 Muted" if muted else "🔇 Live",
+                            font=("Segoe UI", 8),
+                            bg= "#45475A" if muted else "#313244",
+                            fg="#CDD6F4", activebackground="#585B70",
+                            activeforeground="#CDD6F4", relief="flat",
+                            padx = 6, pady=3, cursor="hand2",
+                            command=lambda k=key, cb=on_mute: cb(k))
+        mute_btn.pack(pady=(2,0))
