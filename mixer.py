@@ -172,3 +172,8 @@ class VolumeMixer(tk.Tk):
         self._status_var.set("Refreshing...")
         #
         threading.Thread(target=self._refresh_worker, daemon=True).start()
+    
+    def _refresh_worker(self):
+        try:
+            sessions = fetch_sessions()
+            master = fetch_master()
