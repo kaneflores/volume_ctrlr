@@ -97,3 +97,4 @@ class VolumeMixer(tk.Tk):
         tk.Frame(self, height=1, bg="#313244").pack(fill="x")
 
         #scrollable channel area
+        container = tk.Frame(self, bg="#1E1E2E")
