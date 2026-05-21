@@ -114,4 +114,6 @@ class VolumeMixer(tk.Tk):
 
         tk.Frame(self, height =1, bg="#313244").pack(fill="x")
 
+        # status bar
+        self._status_var = tk.StringVar(value="Loading...")
         
