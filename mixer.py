@@ -170,4 +170,5 @@ class VolumeMixer(tk.Tk):
         if self._after_id:
             self.after_cancel(self._after_id)
         self._status_var.set("Refreshing...")
-        
+        #
+        threading.
