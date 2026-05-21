@@ -185,4 +185,5 @@ class VolumeMixer(tk.Tk):
         #done and validated
 
     def _apply_refresh(self, sessions, master):
-        for w in self._widgets.values()
+        for w in self._widgets.values():
+            w["frame"].destroy()
