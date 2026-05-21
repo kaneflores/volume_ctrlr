@@ -162,4 +162,4 @@ class VolumeMixer(tk.Tk):
                 "pct_lbl": pct_lbl, "mute_btn": mute_btn}
     
     def _slider_moved(self, value, key, lbl, callback):
-        v = int(float(value))
+        v = int(float(value))#checkpont
