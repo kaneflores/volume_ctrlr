@@ -190,3 +190,5 @@ class VolumeMixer(tk.Tk):
         self._widgets.clear()
 
         #master channel
+        def set_master(key,vol):
+            
