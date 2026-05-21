@@ -157,3 +157,6 @@ class VolumeMixer(tk.Tk):
                             padx = 6, pady=3, cursor="hand2",
                             command=lambda k=key, cb=on_mute: cb(k))
         mute_btn.pack(pady=(2,0))
+
+        return {"frame": frame, "slider": slider, "vol_var": vol_var,
+                "pct_lbl": pct_lbl, "mute_btn": mute_btn}
