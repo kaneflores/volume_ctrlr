@@ -119,3 +119,6 @@ class VolumeMixer(tk.Tk):
         tk.Label(self, textvariable=self._status_var,
                     font=("Segoe UI",9), fg="#6C7086", bg="#1E1E2E",
                     anchor="w", padx=12, pady=6).pack(fill="x")
+    
+    def _make_channel(self, parent, key, label, icon, vol, muted, on_vol, on_mute):
+        col = len(self._widgets)
