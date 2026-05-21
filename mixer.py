@@ -116,4 +116,6 @@ class VolumeMixer(tk.Tk):
 
         # status bar
         self._status_var = tk.StringVar(value="Loading...")
-        
+        tk.Label(self, textvariable=self._status_var,
+                    font=("Segoe UI",9), fg="#6C7086", bg="#1E1E2E",
+                    anchor="w", padx=12, pady=6).pack(fill="x")
