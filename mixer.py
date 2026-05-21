@@ -98,3 +98,20 @@ class VolumeMixer(tk.Tk):
 
         #scrollable channel area
         container = tk.Frame(self, bg="#1E1E2E")
+        container.pack(fill="both", expand = True)
+
+        self._canvas = tk.Canvas(container, bg="#1E1E2E", highlightthickness=0, height=320)
+        self._canvas.pack(side="left", fill="both", expand=True)
+
+        scrollbar = ttk.Scrollbar(container, orient="horizontal", command=self._canvas.xview)
+        scrollbar.pack(side="bottom", fill="x")
+        self._canvas.configure(xscrollcommand=scrollbar.set)
+
+        self._channels_frame = tk.Frame(self._canvas, bg="#1E1E2E")
+        self._canvas.create_window((0,0), window=self._channels_frame, anchor="nw")
+        self._channels_frame.bind("<Configure>",
+                lambda e: self._canvas.configure(scrollregion=self._canvas.bbox("all")))
+
+        tk.Frame(self, height =1, bg="#313244").pack(fill="x")
+
+        
