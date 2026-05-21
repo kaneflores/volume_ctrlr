@@ -188,3 +188,5 @@ class VolumeMixer(tk.Tk):
         for w in self._widgets.values():
             w["frame"].destroy()
         self._widgets.clear()
+
+        #master channel
