@@ -122,3 +122,16 @@ class VolumeMixer(tk.Tk):
     
     def _make_channel(self, parent, key, label, icon, vol, muted, on_vol, on_mute):
         col = len(self._widgets)
+        frame = tk.Frame(parent, bg="#181825", bd=0,
+                        highlightbackground="#313244", highlightthickness=1,
+                        padx=8, pady=10, width=CHANNEL_WIDTH)
+        frame.grid(row=0, column=col, sticky="ns", padyx=4, pady=8)
+        frame.grid_propagate(False)
+
+        tk.Label(frame, text=icon, font=("Segoe UI", 22),
+                bg="#181825", fg="#CDD6F4").pack()
+        tk.Label(frame, text=label, font=("Segoe UI", 9),
+                fg="#BAC2DE", bg="#181825",
+                wraplength=CHANNEL_WIDTH - 16, justify = "center").pack(pady=(2,6))
+        
+        vol_var = tk.Intvar(value=vol)
