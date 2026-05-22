@@ -194,4 +194,6 @@ class VolumeMixer(tk.Tk):
             # validated andone
             threading.Thread(target=lambda: run_helper("master", vol), daemon=True).start()
 
+        def mute_master(key):
+            cur = self.
             
