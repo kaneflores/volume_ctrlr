@@ -195,5 +195,8 @@ class VolumeMixer(tk.Tk):
             threading.Thread(target=lambda: run_helper("master", vol), daemon=True).start()
 
         def mute_master(key):
-            cur = self.
+            cur = self._widgets["__master__"]["vol_var"].get()
+            new_vol = 0 if cur > 0 else 50
+            self._widgets["__master__"]["slider"].set(new_vol)
+            set_master(key, new_vol)
             
