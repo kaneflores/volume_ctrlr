@@ -200,5 +200,6 @@ class VolumeMixer(tk.Tk):
             self._widgets["__master__"]["slider"].set(new_vol)
             set_master(key, new_vol)
         
-        w = self._make_channel
+        w = self._make_channel(self._channels_frame, "__master__", "Master", "🔊",
+                               master, False, on_vol=set_master, on_mute=mute_master)
             
