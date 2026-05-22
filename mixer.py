@@ -202,4 +202,9 @@ class VolumeMixer(tk.Tk):
         
         w = self._make_channel(self._channels_frame, "__master__", "Master", "🔊",
                                master, False, on_vol=set_master, on_mute=mute_master)
+        w["frame"].config(highlightbackground="#89B4FA", highlightthickness =1)
+        self._widgets["__master__"]= w
+
+        #app channels
+        for 
             
