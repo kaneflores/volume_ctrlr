@@ -210,4 +210,6 @@ class VolumeMixer(tk.Tk):
             pid, name, vol, muted = s["pid"], s["name"], s["vol"], s["muted"]
             icon = get_icon(name)
             display = name[:-4] if name.lower().endswith(".exe") else name
+
+            def set_vol(key, v, _pid=pid):
             
