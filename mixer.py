@@ -206,5 +206,8 @@ class VolumeMixer(tk.Tk):
         self._widgets["__master__"]= w
 
         #app channels
-        for  s
+        for s in sessions:
+            pid, name, vol, muted = s["pid"], s["name"], s["vol"], s["muted"]
+            icon = get_icon(name)
+            display = name[:-4] if name.lower().endswith(".exe") else name
             
