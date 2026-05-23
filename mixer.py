@@ -206,5 +206,5 @@ class VolumeMixer(tk.Tk):
         self._widgets["__master__"]= w
 
         #app channels
-        for 
+        for  s
             
