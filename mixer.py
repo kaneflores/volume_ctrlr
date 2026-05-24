@@ -211,5 +211,5 @@ class VolumeMixer(tk.Tk):
             icon = get_icon(name)
             display = name[:-4] if name.lower().endswith(".exe") else name
 
-            def set_vol(key, v, _pid=pid):
+            def set_vol(key, v, _pid=pid): # set_vol checkpoint
             
