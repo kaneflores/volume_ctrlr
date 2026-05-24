@@ -215,4 +215,13 @@ class VolumeMixer(tk.Tk):
                 threading.Thread(target=lambda: run_helper("set", _pid, v), daemon=True).start()
             
             def toggle_mute(key, pid=pid):
-                
+                ww = self._widgets.get(key)
+                if not ww: return
+                new_mute = 0 if "Muted" in ww["mute_btn"].cget("text") else 1
+                ww["mute_btn"].config(
+                    text="🔇 Muted" if new_mute else "🔊 Live",
+                    bg="#45475A" if new_mute else "#313244"
+
+                )
+                threading.Thread(target=lambda: run_helper("mute", _pid, new_mute), daemon=True).start()
+            
