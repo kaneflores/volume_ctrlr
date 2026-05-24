@@ -227,4 +227,7 @@ class VolumeMixer(tk.Tk):
             
             w = self._make_channel(self._channels_frame, str(pid), display, icon,
                                    vol, muted, on_vol=set_vol, on_mute=toggle_mute)
-            self._widgets
+            self._widgets[str(pid)] = w
+
+        total = len(sessions)
+        self.
