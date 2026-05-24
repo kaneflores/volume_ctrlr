@@ -184,7 +184,7 @@ class VolumeMixer(tk.Tk):
             self.after(0, lambda: self._status_var.set(f"Error: {e}"))
         #done and validated
 
-    def _apply_refresh(self, sessions, master):
+    def _apply_refresh(self, sessions, master): # validated and done
         for w in self._widgets.values():
             w["frame"].destroy()
         self._widgets.clear()
