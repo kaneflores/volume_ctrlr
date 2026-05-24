@@ -212,4 +212,4 @@ class VolumeMixer(tk.Tk):
             display = name[:-4] if name.lower().endswith(".exe") else name
 
             def set_vol(key, v, _pid=pid): # set_vol checkpoint
-            
+                threading.Thread(target=lambda: run_helper("set", _pid, v), daemon=True).start()
