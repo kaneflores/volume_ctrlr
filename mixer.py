@@ -214,7 +214,7 @@ class VolumeMixer(tk.Tk):
             def set_vol(key, v, _pid=pid): # set_vol checkpoint
                 threading.Thread(target=lambda: run_helper("set", _pid, v), daemon=True).start()
             
-            def toggle_mute(key, pid=pid):
+            def toggle_mute(key, _pid=pid):
                 ww = self._widgets.get(key)
                 if not ww: return
                 new_mute = 0 if "Muted" in ww["mute_btn"].cget("text") else 1
