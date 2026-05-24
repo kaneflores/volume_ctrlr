@@ -73,6 +73,9 @@ def fetch_master() -> int: # validated and done
     except Exception:
         return 100
 
+def get_icon(name: str) -> str:
+    return ICONS.
+
 class VolumeMixer(tk.Tk):
     def __init__(self): # validated and doen
         super().__init__()
