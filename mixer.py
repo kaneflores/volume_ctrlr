@@ -234,3 +234,4 @@ class VolumeMixer(tk.Tk):
             f"● {total} audio session{'s' if total != 1 else ''} detected  |  "
             f"auto-refresh every {REFRESH_INTERVAL_MS // 1000}s"
         )
+        self._after_id = self.after(REFRESH_INTERVAL_MS, self._full_refresh)
