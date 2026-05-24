@@ -235,3 +235,9 @@ class VolumeMixer(tk.Tk):
             f"auto-refresh every {REFRESH_INTERVAL_MS // 1000}s"
         )
         self._after_id = self.after(REFRESH_INTERVAL_MS, self._full_refresh)
+
+if __name__ == "__main__":
+    app = VolumeMixer()
+    app.update_idletasks()
+    app.minsize(400, 380)
+    app.mainloop()
