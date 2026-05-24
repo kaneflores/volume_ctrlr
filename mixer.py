@@ -225,3 +225,6 @@ class VolumeMixer(tk.Tk):
                 )
                 threading.Thread(target=lambda: run_helper("mute", _pid, new_mute), daemon=True).start()
             
+            w = self._make_channel(self._channels_frame, str(pid), display, icon,
+                                   vol, muted, on_vol=set_vol, on_mute=toggle_mute)
+            self._widgets
