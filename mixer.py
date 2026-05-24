@@ -213,3 +213,6 @@ class VolumeMixer(tk.Tk):
 
             def set_vol(key, v, _pid=pid): # set_vol checkpoint
                 threading.Thread(target=lambda: run_helper("set", _pid, v), daemon=True).start()
+            
+            def toggle_mute(key, pid=pid):
+                
