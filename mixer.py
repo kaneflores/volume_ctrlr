@@ -230,4 +230,7 @@ class VolumeMixer(tk.Tk):
             self._widgets[str(pid)] = w
 
         total = len(sessions)
-        self.
+        self._status_var.set(
+            f"● {total} audio session{'s' if total != 1 else ''} detected  |  "
+            f"auto-refresh every {REFRESH_INTERVAL_MS // 1000}s"
+        )
