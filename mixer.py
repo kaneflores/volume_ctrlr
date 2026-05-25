@@ -171,6 +171,8 @@ class VolumeMixer(tk.Tk):
         lbl.config(text=f"{v}%")
         callback(key, v)
         # cancel any pending call for this key
+        if hasattr(self, '_slider_timers') and key in self._slider_timers:
+            
     
     def _full_refresh(self):
         if self._after_id:
