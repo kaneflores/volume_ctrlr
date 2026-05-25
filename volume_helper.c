@@ -134,7 +134,8 @@ static ISimpleAudioVolume* find_session_by_pid(DWORD target_pid){ //checked
         if (!ctrl) continue;
 
         IAudioSessionControl2 *ctrl2 = NULL;
-        IAudioSessionControl_QueryInterface(ctrl, &(GUID){0xBFB7FF88,0x7239,0x4FC9,{0x8F,0xA2,0x07,0xC9,0x50,0xBE,0x9C,0x6D}}, (void**)&ctrl2);
+        const GUID IID_IAudioSessionControl2 = {0xBFB7FF88, 0x7239, 0x4FC9, {0x8F, 0xA2, 0x07, 0xC9, 0x50, 0xBE, 0x9C, 0x6D}};
+        IAudioSessionControl_QueryInterface(ctrl, &IID_IAudioSessionControl2, (void**)&ctrl2);
         IAudioSessionControl_Release(ctrl);
         if (!ctrl2) continue;
 
