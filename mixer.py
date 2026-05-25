@@ -4,6 +4,7 @@ Requires: Python 3.8+, tkinter (bundled with python)
 The compiled volume_helper.exe must sit in the same folder as the script.
 
 Run: python mixer.py
+OFFICIALLY DONE WITH CODE
 """
 
 import subprocess
