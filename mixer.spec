@@ -4,7 +4,7 @@
 a = Analysis(
     ['mixer.py'],
     pathex=[],
-    binaries=[],
+    binaries=[('volume_helper.exe', '.')],
     datas=[],
     hiddenimports=[],
     hookspath=[],
