@@ -193,7 +193,7 @@ class VolumeMixer(tk.Tk):
         self._widgets.clear()
 
         #master channel done
-        def set_master(key,vol):
+        def set_master(_key,vol):
             # validated andone
             threading.Thread(target=lambda: run_helper("master", vol), daemon=True).start()
 
