@@ -73,7 +73,7 @@ def fetch_master() -> int: # validated and done
     except Exception:
         return 100
 
-def get_icon(name: str) -> str:
+def get_icon(name: str) -> str: # done with get_icn
     return ICONS.get(name.lower(), "🎮")
 
 class VolumeMixer(tk.Tk):
