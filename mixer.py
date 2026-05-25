@@ -172,7 +172,9 @@ class VolumeMixer(tk.Tk):
         callback(key, v)
         # cancel any pending call for this key
         if hasattr(self, '_slider_timers') and key in self._slider_timers:
-            
+            self.after_cancel(self._slider_timers[key])
+        if not hasattr(self, '_slider_timers'):
+            self._slider_timers = {}
     
     def _full_refresh(self):
         if self._after_id:
