@@ -175,6 +175,8 @@ class VolumeMixer(tk.Tk):
             self.after_cancel(self._slider_timers[key])
         if not hasattr(self, '_slider_timers'):
             self._slider_timers = {}
+        # only fire after 150ms of no movement
+        self._slider_timers[key] = self.after(150, lambda: callback(key, v))
     
     def _full_refresh(self):
         if self._after_id:
