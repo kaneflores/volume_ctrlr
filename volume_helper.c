@@ -46,7 +46,7 @@ static IMMDevice* get_default_device(void){ //validated and checked
     return device;
 }
 
-static void get_process_name(DWORD pid, char *buf, int buflen){
+static void get_process_name(DWORD pid, char *buf, int buflen){ // get_process name validated and done
     HANDLE hProc = OpenProcess(PROCESS_QUERY_LIMITED_INFORMATION, FALSE, pid);
     if (!hProc){ strncpy(buf, "Unknown", buflen); return;}
     char path[MAX_PATH] = {0};
