@@ -45,7 +45,7 @@ def run_helper(*args) -> str: #run helper changed subprocess windows
     result = subprocess.run(
         [HELPER, *[str(a) for a in args]],
         capture_output = True, text = True, timeout = 5,
-        creationflags=subprocess.CREATE_NO_WINDOW
+        creationflags=subprocess.CREATE_NO_WINDOW #ignore red squiggies
     )
     return result.stdout.strip()
 
