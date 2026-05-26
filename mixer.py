@@ -90,7 +90,7 @@ class VolumeMixer(tk.Tk):
         self._build_ui()
         self.after(100, self._full_refresh)
     
-    def _build_ui(self): # revalidated
+    def _build_ui(self): # build ui changed size
         # top bar
         topbar = tk.Frame(self, bg="#1E1E2E", pady = 8, padx =12)
         topbar.pack(fill="x")
