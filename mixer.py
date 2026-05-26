@@ -44,7 +44,7 @@ def run_helper(*args) -> str: #//validated and checked
         )
     result = subprocess.run(
         [HELPER, *[str(a) for a in args]],
-        capture_output = True, text = True, timeout = 5
+        capture_output = True, text = True, timeout = 5,
         creationflags=subprocess.CREATE_NO_WINDOW
     )
     return result.stdout.strip()
