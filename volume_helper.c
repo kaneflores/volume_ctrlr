@@ -65,7 +65,7 @@ static void get_process_name(DWORD pid, char *buf, int buflen){ // get_process n
     
 }
 
-static int cmd_list(void){ //checked
+static int cmd_list(void){ //validated and checked
     IMMDevice *device = get_default_device();
     if (!device) { fprintf(stderr, "ERROR:no_device\n"); return 1; }
 
