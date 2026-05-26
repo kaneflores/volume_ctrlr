@@ -33,7 +33,7 @@
 // DEFINE_GUID(IID_ISimpleAudioVolume,   0x87CE5498,0x68D6,0x44E5,0x92,0x15,0x6D,0xA4,0x7E,0xF8,0x83,0xD8);
 // DEFINE_GUID(IID_IAudioEndpointVolume, 0x5CDF2C82,0x841E,0x4546,0x97,0x22,0xCF,0x7F,0xA0,0x79,0x00,0x92);
 
-static IMMDevice* get_default_device(void){
+static IMMDevice* get_default_device(void){ //validated and checked
     IMMDeviceEnumerator *enumerator = NULL;
     IMMDevice *device = NULL;
     HRESULT hr = CoCreateInstance(&CLSID_MMDeviceEnumerator, NULL, CLSCTX_ALL,
