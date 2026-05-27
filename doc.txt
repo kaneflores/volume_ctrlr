@@ -6,3 +6,5 @@ const {
 } = require('docx');
 const fs = require('fs');
 
+const ACCENT = "1E3A5F";
+const ACCENT2 = "2E75B6";
