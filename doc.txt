@@ -13,4 +13,4 @@ const GRAY ="F5F5F5";
 const WHITE = "FFFFFF";
 
 const border = { style: BorderStyle.SINGLE, size: 1, color: "CCCCCC"};
-const borders =
+const borders ={ top: border, bottom: border, left: border, right: border };
