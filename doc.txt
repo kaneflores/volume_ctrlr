@@ -11,3 +11,6 @@ const ACCENT2 = "2E75B6";
 const LIGHT = "D5E8F0";
 const GRAY ="F5F5F5";
 const WHITE = "FFFFFF";
+
+const border = { style: BorderStyle.SINGLE, size: 1, color: "CCCCCC"};
+const borders =
