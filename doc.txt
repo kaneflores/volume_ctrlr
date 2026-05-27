@@ -30,3 +30,11 @@ function h2(text) {
     children: [new TextRun({ text, bold: true, size: 26, color: ACCENT2, font: "Arial" })]
   });
 }
+
+function h3(text) {
+  return new Paragraph({
+    heading: HeadingLevel.HEADING_3,
+    spacing: { before: 200, after: 80 },
+    children: [new TextRun({ text, bold: true, size: 22, color: "444444", font: "Arial" })]
+  });
+}
