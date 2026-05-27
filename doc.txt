@@ -14,3 +14,11 @@ const WHITE = "FFFFFF";
 
 const border = { style: BorderStyle.SINGLE, size: 1, color: "CCCCCC"};
 const borders ={ top: border, bottom: border, left: border, right: border };
+
+function h1(text) {
+  return new Paragraph({
+    heading: HeadingLevel.HEADING_1,
+    spacing: { before: 320, after: 160 },
+    children: [new TextRun({ text, bold: true, size: 32, color: ACCENT, font: "Arial" })]
+  });
+}
