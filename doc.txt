@@ -1,0 +1,8 @@
+const {
+    Document, Pakcer, Paragraph, TextRun, Table, TableRow, TableCell,
+    HeadingLvel, AlignmentType, BorderStyle, WidthType, ShadingType,
+    ExternalHyperlink, PageNumber, Header, Footer, LevelFormat,
+    PageBreak
+} = require('docx');
+const fs = require('fs');
+
