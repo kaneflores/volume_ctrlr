@@ -41,4 +41,9 @@ function h3(text) {
   });
 }
 
-function p()
+function p(text, opts = {}) {
+  return new Paragraph({
+    spacing: {before: 80, after: 80},
+    children: [new TextRun({text, size:22, font: "Arial", ...opts})]
+  });
+}
