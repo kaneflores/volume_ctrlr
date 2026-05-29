@@ -71,3 +71,11 @@ function code(text){//
   });
 }
 
+function codeBlock(lines) {
+  return lines.map(line => new Paragraph({
+    spacing: { before: 0, after: 0 },
+    indent: { left: 360 },
+    shading: { fill: "F8F8F8", type: ShadingType.CLEAR },
+    children: [new TextRun({ text: line, size: 18, font: "Courier New", color: "2C3E50" })]
+  }));
+}
