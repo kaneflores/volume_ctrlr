@@ -24,8 +24,10 @@ function h1(text) {
 }
 function h1(text){
   return new Paragraph({
-    heading: 
-  })
+    heading: HeadingLevel.HEADING_1,
+    spacing: {before:320, after: 150},
+    children: [new TextRun({text, bold: true, size: 32, color: ACCENT, font: "Times New Roman"})]
+  });
 }
 
 function h2(text) {
