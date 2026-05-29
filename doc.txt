@@ -54,3 +54,11 @@ function pRuns(runs) {
     children: runs.map(r => new TextRun({ size: 22, font: "Times New Roman", ...r}))
   });
 }
+
+function bullet(text){
+  return new Paragraph({
+    numbering: { reference: "bullets", level: 0},
+    spacing: { before: 60, after: 60},
+    children: [new TextRun({text, size: 22, font: "Times New Roman"})]
+  });
+}
