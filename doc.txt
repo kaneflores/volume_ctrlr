@@ -62,3 +62,12 @@ function bullet(text){ //
     children: [new TextRun({text, size: 22, font: "Times New Roman"})]
   });
 }
+
+function code(text){
+  return new Paragraph({
+    spacing: {before: 80, after: 80},
+    indent: { left: 720},
+    children: [new TextRun({text, size: 20, font: "Courier New", color: "C0392B"})]
+  });
+}
+
