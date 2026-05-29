@@ -63,7 +63,7 @@ function bullet(text){ //
   });
 }
 
-function code(text){
+function code(text){//
   return new Paragraph({
     spacing: {before: 80, after: 80},
     indent: { left: 720},
