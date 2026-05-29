@@ -47,3 +47,10 @@ function p(text, opts = {}) {
     children: [new TextRun({text, size:22, font: "Arial", ...opts})]
   });
 }
+
+function pRuns(runs) {
+  return new Paragraph({
+    spacing: {before: 80, after: 80},
+    children: runs.map(r => new TextRun({ size: 22, font: "Times New Roman", ...r}))
+  });
+}
