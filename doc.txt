@@ -55,7 +55,7 @@ function pRuns(runs) {
   });
 }
 
-function bullet(text){
+function bullet(text){ //
   return new Paragraph({
     numbering: { reference: "bullets", level: 0},
     spacing: { before: 60, after: 60},
