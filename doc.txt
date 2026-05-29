@@ -79,3 +79,5 @@ function codeBlock(lines) {
     children: [new TextRun({ text: line, size: 18, font: "Courier New", color: "2C3E50" })]
   }));
 }
+
+function divider(){}
