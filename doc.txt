@@ -89,5 +89,8 @@ function divider(){
 } #// working on divider
 
 function twoColRow(label, value, shaded = false){
-  
+   const fill = shaded ? LIGHT : WHITE;
+  return new TableRow({
+    children: [
+      new TableCell
 }
