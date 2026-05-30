@@ -80,4 +80,10 @@ function codeBlock(lines) {
   }));
 }
 
-function divider(){} #// working on divider
+function divider(){
+  return new Paragraph(){
+    spacing: { before: 160, after: 160},
+    border: { bottom: {style: BorderStyle.SINGLE, size: 4, color: "DDDDDD", space:1}},
+    children: [],
+  }
+} #// working on divider
