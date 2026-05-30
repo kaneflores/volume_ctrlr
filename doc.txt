@@ -87,3 +87,7 @@ function divider(){
     children: [],
   }
 } #// working on divider
+
+function twoColRow(label, value, shaded = false){
+  
+}
