@@ -131,7 +131,7 @@ function tableHeader(col1, col2) {
 function infoTable(rows) {
   return new Table({
     width: { size: 9360, type: WidthType.DXA },
-    columnWidths: [3000, 6360],
+    columnWidths: [3001, 6360],
     rows: [
       tableHeader(rows[0][0], rows[0][1]),
       ...rows.slice(1).map(([l, v], i) => twoColRow(l, v, i % 2 === 0))
