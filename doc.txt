@@ -126,4 +126,4 @@ function tableHeader(col1, col2) {
       })
     ]
   });
-}
+}}
