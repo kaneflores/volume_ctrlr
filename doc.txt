@@ -139,3 +139,5 @@ function infoTable(rows) {
 }
 
 .... # look through docs again
+
+const doc = new Document({
