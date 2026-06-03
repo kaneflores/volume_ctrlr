@@ -141,3 +141,12 @@ function infoTable(rows) {
 .... # look through docs again
 
 const doc = new Document({
+  numbering: {
+    config: [{
+      reference: "bullets",
+      levels: [{
+        level: 0, format: LevelFormat.BULLET, text: "•", alignment: AlignmentType.LEFT,
+        style: { paragraph: { indent: { left: 720, hanging: 360 } } }
+      }]
+    }]
+  },
