@@ -5,7 +5,6 @@
     Windows per_application volume controller using Core audio (WASAPI).
     Compile with MinGW:
         gcc volume
-
     
 */
 /*
